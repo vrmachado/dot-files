@@ -20,8 +20,19 @@ nmap <leader>w :w!<cr>
 "Quit binding
 nnoremap <Leader>q :q!<cr>
 
+"Shortcut to insert a Date
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+"Shortcut to toggle Syntastic
+nnoremap <F9> :SyntasticToggleMode<CR>
+"Shortcut to remove auto line break
+nnoremap <F8> :set formatoptions-=t<CR>
+
+
 "Set standard encoding
 set encoding=utf8
+
 
 "swap, backup and backup skip directories
 set dir=$HOME/tmp/
@@ -34,11 +45,6 @@ set ruler
 set modeline
 set confirm
 set title
-
-"Shortcut to toggel Syntastic
-nnoremap <F9> :SyntasticToggleMode<CR>
-"Shortcut to remove auto line break
-nnoremap <F8> :set formatoptions-=t<CR>
 
 let g:tex_flavor = "latex"
 """"""""""""""""""""""""
@@ -73,13 +79,14 @@ set autoindent
 set backspace=indent,eol,start
 
 " Copy/Paste integration
-imap <C-v> <space><esc> "+gPs
-imap <C-c> "+ya
-vmap <C-c> "+y
-vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc> " p in visual mode
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 set smartindent
 set smartcase
+
 """"""""""""""""""""""""
 " Folding
 """"""""""""""""""""""""
