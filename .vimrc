@@ -21,8 +21,8 @@ nmap <leader>w :w!<cr>
 nnoremap <Leader>q :q!<cr>
 
 "Shortcut to insert a Date
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+nmap <F3> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d")<CR>
 
 "Shortcut to toggle Syntastic
 nnoremap <F9> :SyntasticToggleMode<CR>
