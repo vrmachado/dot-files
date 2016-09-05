@@ -2,6 +2,7 @@
 export ZSH=/home/vrmachado/.oh-my-zsh
 export TERM=xterm-256color
 eval `dircolors ~/.dircolors`
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 
 # Set name of the theme to load.
