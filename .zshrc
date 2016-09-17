@@ -1,7 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/vrmachado/.oh-my-zsh
 export TERM=xterm-256color
-eval `dircolors ~/.dircolors`
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 
@@ -9,7 +8,7 @@ source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sunaku"
+ZSH_THEME="sunrise"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
