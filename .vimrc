@@ -146,6 +146,7 @@ call plug#begin('~/.vim/plugged')
 		Plug 'tomasr/molokai'
         Plug 'morhetz/gruvbox'
         Plug 'junegunn/goyo.vim'
+        Plug 'blindFS/vim-taskwarrior'
 call plug#end()
 """"""""""""""""""""""""
 " Airline
@@ -164,6 +165,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=5
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 """""""""""""""""""""""
 " Vimwiki
 """"""""""""""""""""""
