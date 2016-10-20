@@ -150,6 +150,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'morhetz/gruvbox'
         Plug 'junegunn/goyo.vim'
         Plug 'blindFS/vim-taskwarrior'
+        Plug 'vim-scripts/R-syntax-highlighting'
 call plug#end()
 """"""""""""""""""""""""
 " Airline
@@ -177,7 +178,7 @@ let wiki.path = '~/Dropbox/vimwiki'
 let wiki.path_html = '~/Dropbox/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
-let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript'}
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript', 'sh': 'sh', 'r': 'r'}
 let g:vimwiki_list = [wiki]
 let g:vimwiki_folding = 'expr'
 """"""""""""""""""""""""
