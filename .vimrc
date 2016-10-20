@@ -151,6 +151,10 @@ call plug#begin('~/.vim/plugged')
         Plug 'junegunn/goyo.vim'
         Plug 'blindFS/vim-taskwarrior'
         Plug 'vim-scripts/R-syntax-highlighting'
+        Plug 'fsharp/vim-fsharp', {
+              \ 'for': 'fsharp',
+              \ 'do':  'make fsautocomplete',
+              \}
 call plug#end()
 """"""""""""""""""""""""
 " Airline
@@ -178,7 +182,7 @@ let wiki.path = '~/Dropbox/vimwiki'
 let wiki.path_html = '~/Dropbox/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
-let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript', 'sh': 'sh', 'r': 'r'}
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript', 'sh': 'sh', 'r': 'r', 'fsharp': 'fsharp'}
 let g:vimwiki_list = [wiki]
 let g:vimwiki_folding = 'expr'
 """"""""""""""""""""""""
