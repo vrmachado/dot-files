@@ -20,6 +20,9 @@ nmap <leader>w :w!<cr>
 "Quit binding
 nnoremap <Leader>q :q!<cr>
 
+"Shortcut to insert markdown code bllock
+imap <F2> ```lang<CR>```
+
 "Shortcut to insert a Date
 nmap <F3> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d")<CR>
@@ -79,10 +82,10 @@ set autoindent
 set backspace=indent,eol,start
 
 " Copy/Paste integration
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 set smartindent
 set smartcase
