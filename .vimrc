@@ -24,8 +24,10 @@ nnoremap <Leader>q :q!<cr>
 imap <F2> ```lang<CR>```
 
 "Shortcut to insert a Date
-nmap <F3> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d")<CR>
+
+"shortcut to call Clang-Format
+nnoremap <F4> :ClangFormat<CR>
 
 "Shortcut to toggle Syntastic
 nnoremap <F9> :SyntasticToggleMode<CR>
@@ -151,6 +153,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'junegunn/goyo.vim'
         Plug 'blindFS/vim-taskwarrior'
         Plug 'vim-scripts/R-syntax-highlighting'
+        Plug 'kana/vim-operator-user'
+        Plug 'rhysd/vim-clang-format'
         Plug 'fsharp/vim-fsharp', {
               \ 'for': 'fsharp',
               \ 'do':  'make fsautocomplete',
@@ -205,3 +209,16 @@ if has ('gui_running')
 	set mousehide
 	set guifont=Anonymous\ Pro\ for\ Powerline\ 12
 endif
+"""""""""""""""""""""""
+" Clang Format
+""""""""""""""""""""""
+let g:clang_format#code_style = 'llvm'
+let g:clang_format#style_option = {
+                                    \ "Standard" : "C++11", 
+                                    \ "IndentWidth" : 4,
+                                    \ "TabWidth" : 4,
+                                    \ "UseTab" : "Never",
+                                    \ "AccessModifierOffset" : -4,
+                                    \ "AllowShortIfStatementsOnASingleLine" : "true",
+                                    \ "AlwaysBreakTemplateDeclarations" : "true"}
+
