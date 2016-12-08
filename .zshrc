@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/vrmachado/.oh-my-zsh
-export TERM=xterm-256color
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 alias tmux="tmux -2"
@@ -58,7 +57,7 @@ plugins=(git)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/omnetpp/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/omnetpp/lib
-export TERM="xterm-256color" export MANPATH="/usr/local/man:$MANPATH"
+export TERM=xterm-256color export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
