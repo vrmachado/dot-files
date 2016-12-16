@@ -24,7 +24,7 @@ nnoremap <Leader>q :q!<cr>
 imap <F2> ```lang<CR>```
 
 "Shortcut to insert a Date
-imap <F3> <C-R>=strftime("%Y-%m-%d")<CR>
+imap <F3> ### <C-R>=strftime("%Y-%m-%d")<CR>
 
 "shortcut to call Clang-Format
 nnoremap <F4> :ClangFormat<CR>
