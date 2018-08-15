@@ -148,17 +148,13 @@ call plug#begin('~/.vim/plugged')
 		Plug 'itchyny/calendar.vim'
 		Plug 'justinmk/vim-syntax-extra'
         Plug 'hdima/python-syntax'
+        Plug 'vim-pyhon/python-syntax'
 		Plug 'tomasr/molokai'
         Plug 'morhetz/gruvbox'
         Plug 'junegunn/goyo.vim'
-        Plug 'blindFS/vim-taskwarrior'
         Plug 'vim-scripts/R-syntax-highlighting'
         Plug 'kana/vim-operator-user'
-        Plug 'rhysd/vim-clang-format'
-        Plug 'fsharp/vim-fsharp', {
-              \ 'for': 'fsharp',
-              \ 'do':  'make fsautocomplete',
-              \}
+        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 """"""""""""""""""""""""
 " Airline
@@ -178,12 +174,28 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=5
 let g:syntastic_cpp_compiler_options = '-std=c++11'
+
+let g:python_highlight_all = 1
+
+let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:go_highlight_trailing_whitespace_error = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_format_strings = 1
+
 """""""""""""""""""""""
 " Vimwiki
 """"""""""""""""""""""
 let wiki = {}
-let wiki.path = '~/Dropbox/vimwiki'
-let wiki.path_html = '~/Dropbox/vimwiki'
+let wiki.path = '~/vimwiki'
+let wiki.path_html = '~/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript', 'sh': 'sh', 'r': 'r', 'fsharp': 'fsharp'}
@@ -193,32 +205,13 @@ let g:vimwiki_folding = 'expr'
 " Colorscheme and Font
 """"""""""""""""""""""""
 set shortmess=I
-if $SSH_CONNECTION
-	colorscheme molokai
-	let g:airline_theme='badwolf'
-	let g:airline_symbols={}
-else
-	set t_Co=256
-	colorscheme gruvbox
-	let g:airline_theme='gruvbox'
-	let g:airline_powerline_fonts = 1
-endif
 "Background
-	set background=dark
-if has ('gui_running')
-	set mousehide
-	set guifont=Anonymous\ Pro\ for\ Powerline\ 12
-endif
-"""""""""""""""""""""""
-" Clang Format
-""""""""""""""""""""""
-let g:clang_format#code_style = 'llvm'
-let g:clang_format#style_option = {
-                                    \ "Standard" : "C++11", 
-                                    \ "IndentWidth" : 4,
-                                    \ "TabWidth" : 4,
-                                    \ "UseTab" : "Never",
-                                    \ "AccessModifierOffset" : -4,
-                                    \ "AllowShortIfStatementsOnASingleLine" : "true",
-                                    \ "AlwaysBreakTemplateDeclarations" : "true"}
+set background=dark
+colorscheme gruvbox
+set termguicolors
+let g:airline_theme='gruvbox'
+let g:gruvbox_contrast_dark = 'hard'
+let g:airline_powerline_fonts = 1
 
+set title
+set titleold=
