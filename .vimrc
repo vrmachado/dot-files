@@ -147,14 +147,13 @@ call plug#begin('~/.vim/plugged')
 		Plug 'mateusbraga/vim-spell-pt-br'
 		Plug 'itchyny/calendar.vim'
 		Plug 'justinmk/vim-syntax-extra'
-        Plug 'hdima/python-syntax'
-        Plug 'vim-pyhon/python-syntax'
-		Plug 'tomasr/molokai'
-        Plug 'morhetz/gruvbox'
-        Plug 'junegunn/goyo.vim'
-        Plug 'vim-scripts/R-syntax-highlighting'
-        Plug 'kana/vim-operator-user'
-        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+		Plug 'octol/vim-cpp-enhanced-highlight'
+		Plug 'vim-python/python-syntax'
+		Plug 'junegunn/goyo.vim'
+		Plug 'kana/vim-operator-user'
+		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		Plug 'junegunn/fzf.vim'
+		Plug 'sjl/badwolf'
 call plug#end()
 """"""""""""""""""""""""
 " Airline
@@ -173,23 +172,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=5
-let g:syntastic_cpp_compiler_options = '-std=c++11'
+let g:syntastic_cpp_compiler_options = '-std=c++17'
 
 let g:python_highlight_all = 1
-
-let g:syntastic_go_checkers = ['golint', 'govet']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-let g:go_highlight_trailing_whitespace_error = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_function_arguments = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_types = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_format_strings = 1
-
 """""""""""""""""""""""
 " Vimwiki
 """"""""""""""""""""""
@@ -198,7 +183,7 @@ let wiki.path = '~/vimwiki'
 let wiki.path_html = '~/vimwiki'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
-let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'rust': 'rust', 'javascript': 'javascript', 'sh': 'sh', 'r': 'r', 'fsharp': 'fsharp'}
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'c', 'sh': 'sh'}
 let g:vimwiki_list = [wiki]
 let g:vimwiki_folding = 'expr'
 """"""""""""""""""""""""
@@ -207,10 +192,9 @@ let g:vimwiki_folding = 'expr'
 set shortmess=I
 "Background
 set background=dark
-colorscheme gruvbox
+colorscheme badwolf
 set termguicolors
-let g:airline_theme='gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
+let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
 
 set title
