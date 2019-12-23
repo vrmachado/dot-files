@@ -1,8 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/vrmachado/.oh-my-zsh
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 alias tmux="tmux -2"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -61,9 +63,6 @@ export TERM=xterm-256color export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
- 
-eval `dircolors ~/.solarized/dircolors.ansi-dark`
- 
 #You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -87,3 +86,7 @@ eval `dircolors ~/.solarized/dircolors.ansi-dark`
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
